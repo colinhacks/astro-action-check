@@ -50,6 +50,10 @@ runs:
         Please specify your preferred \"package-manager\" in the action configuration."
             exit 1
         fi
+
+    - name: Print PACKAGE_MANAGER
+      run: |
+        echo $PACKAGE_MANAGER
     - name: Setup PNPM
       if: ${{ env.PACKAGE_MANAGER == 'pnpm' }}
       uses: pnpm/action-setup@v2.2.4
@@ -60,7 +64,7 @@ runs:
       if: ${{ env.PACKAGE_MANAGER == 'bun' }}
       uses: oven-sh/setup-bun@v1
       with:
-        version: latest
+        bun-version: latest
 
     - name: Setup Node
       uses: actions/setup-node@v3
