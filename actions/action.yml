@@ -52,6 +52,7 @@ runs:
         fi
 
     - name: Print PACKAGE_MANAGER
+      shell: 'bash'
       run: |
         echo $PACKAGE_MANAGER
     - name: Setup PNPM
