@@ -93,8 +93,3 @@ runs:
       run: |
         cd ${{ inputs.path }}
         $PACKAGE_MANAGER run build
-
-    - name: Upload Pages Artifact
-      uses: actions/upload-pages-artifact@v1
-      with:
-        path: '${{ inputs.path }}/dist/'
